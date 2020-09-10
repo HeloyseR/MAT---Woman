@@ -51,16 +51,16 @@ individualidade e empatia.</p>
 
       </section>
        <section class="section-form">
-           <div class="container" id="formschedule">
+                    <div class="container" id="formschedule">
            <h2>Agende uma consulta agora</h2>
            <div class="content-input">
             Nome
-          <input id="name" type="text" class="input-default"/>
+          <input id="name" name="name" type="text" class="input-default"/>
            </div> 
            
           <div class="content-input">
               CPF
-              <input id="crm" type="number" class="input-default"/>
+              <input id="crm" name="crm" type="number" class="input-default"/>
           </div>
           
           <div class="content-input">
@@ -76,12 +76,12 @@ individualidade e empatia.</p>
            
            <div class="content-input">
               Especialidade
-              <select class="input-default">
+              <select id="specialty" class="input-default">
                   
-                  <option value=""> item 1</option>
-                  <option value=""> item 1</option>
-                  <option value=""> item 1</option>
-                  <option value=""> item 1</option>
+                  <option value=""> Selecione uma opção</option>
+                  <option value="01"> item 1</option>
+                  <option value="02"> item 1</option>
+                  <option value="03"> item 1</option>
               </select>
               
                
@@ -92,40 +92,53 @@ individualidade e empatia.</p>
                    
                </div>
                <div>
-             <button class="button" onclick="scheduleAppointment()">Agendar consulta</button>
+             <button class="button" onclick="scheduleAppointment() ">Agendar consulta</button>
+
          </div>
                
-               </div>
+              </div>
+              
+    
                <div class="sucessschedule container" id="successschedule">
                    <h2>Parabéns</h2>
+                   <p>tudo certo com o seu agendamento, <br>você receberá um sms no dia da sua consulta</p>
                    
                </div>
            
        </section>
     </body>
     <script>
-        
         function scheduleAppointment(){
             
-            let scheduleAppointment = true
-            var containerschedule = document.getElementById("formschedule")
-            var containerSucess = document.getElementById("successschedule");
-
-            if (scheduleAppointment){
-                
-
-                if (containerSucess.style.display === "none") {
-                containerSucess.style.display = "block";
-                    containerschedule.style.display = "none";
-                    
-              } else {
-                containerSucess.style.display = "none";
-                  containerschedule.style.display = "block";
-              }  
-
-            }
-
+        var x = document.getElementById("name").value;
+        var y = document.getElementById("specialty").value;
+        var idade = document.getElementById("idade").value;
+        
+        if (x == "" || y == "") {
+        alert("Name must be filled out");
+        
         }
+        else {
+                let scheduleAppointment = true
+                var containerschedule = document.getElementById("formschedule")
+                var containerSucess = document.getElementById("successschedule");
+
+                if (scheduleAppointment){
+
+
+                    if (containerSucess.style.display === "none") {
+                    containerSucess.style.display = "block";
+                    containerschedule.style.display = "none";
+
+                  } else {
+                    containerSucess.style.display = "none";
+                    containerschedule.style.display = "block";
+                  }  
+
+                }
+            } 
+        }
+        
     
     </script>
     <style>
