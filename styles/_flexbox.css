@@ -7,6 +7,9 @@
 .row {
   flex-direction: row;
 }
+.justifyC-center {
+  justify-content: center;
+}
 .justifyC-space-between {
   justify-content: space-between;
 }
@@ -21,4 +24,17 @@
 }
 .alignSelf-flex-end {
   align-self: flex-end;
+}
+.flex0{
+    flex:0;
+}
+.flex1{
+    flex:1
+}
+.divider{
+    
+    border: 1px solid #61c2c7;
+    padding: 10px;
+    
+  
 }
